@@ -1,11 +1,11 @@
-import * as WorkerPool from "./WorkerPool"
+const WorkerPool = require("./WorkerPool")
 
-import BaseWorkerService from "./abstracts/BaseWorkerService"
-import DefaultProvider from "./abstracts/DefaultProvider"
+const BaseWorkerService = require("./abstracts/BaseWorkerService");
+const DefaultProvider = require("./abstracts/DefaultProvider");
 
-import ZeroMqProvider from "./providers/ZeroMqProvider"
+const ZeroMqProvider = require("./providers/ZeroMqProvider");
 
-exports = {
+module.exports = {
     BaseWorkerService,
     DefaultProvider,
     ZeroMqProvider,

@@ -1,13 +1,13 @@
 {
   "name": "@prof_jane/node-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm publish --access public"
+    "publish-package": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/Professora-Jane/node-utils#readme",
   "exports": {
+    ".": "./index.js",
     "./": "./src/"
   },
+  "main": "./index.js",
   "dependencies": {
     "zeromq": "^6.0.0-beta.6"
   }
