@@ -1,6 +1,6 @@
 {
   "name": "@prof_jane/node-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "directories": {
     "test": "tests"
@@ -23,7 +23,6 @@
     ".": "./index.js",
     "./": "./src/"
   },
-  "main": "./index.js",
   "dependencies": {
     "zeromq": "^6.0.0-beta.6"
   }
