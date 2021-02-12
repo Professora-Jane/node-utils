@@ -1,0 +1,24 @@
+{
+  "name": "prof-jane-node-utils",
+  "version": "0.0.1",
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Professora-Jane/node-utils.git"
+  },
+  "author": "Elias Bernardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Professora-Jane/node-utils/issues"
+  },
+  "homepage": "https://github.com/Professora-Jane/node-utils#readme",
+  "exports": {
+    "./": "./src/"
+  }
+}
