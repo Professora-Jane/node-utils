@@ -148,7 +148,7 @@ const publishTypes = Object.freeze({
 
 
 module.exports = {
-    microServicesHandlerInstance: (() => instance)(),
+    microServicesHandlerInstance: (() => microServicesHandlerInstance)(),
     microServicesCore: (() => microServicesCore)(),
     workerTypes,
     publishTypes
