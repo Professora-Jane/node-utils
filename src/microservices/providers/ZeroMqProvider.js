@@ -1,6 +1,6 @@
 const zmq = require("zeromq");
 const DefaultProvider = require("../abstracts/DefaultProvider");
-const { workerTypes } = require("../WorkerPool");
+const { workerTypes } = require("../microServicesCore");
 const BaseWorkerService = require("../abstracts/BaseWorkerService");
 
 class ZeroMqProvider extends DefaultProvider {
