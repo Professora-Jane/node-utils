@@ -1,4 +1,4 @@
-const WorkerPool = require("./WorkerPool")
+const { microServicesCore, microServicesHandlerInstance, publishTypes, workerTypes } = require("./microServicesCore")
 
 const BaseWorkerService = require("./abstracts/BaseWorkerService");
 const DefaultProvider = require("./abstracts/DefaultProvider");
@@ -9,5 +9,8 @@ module.exports = {
     BaseWorkerService,
     DefaultProvider,
     ZeroMqProvider,
-    ...WorkerPool
+    microServicesCore,
+    microServicesHandlerInstance,
+    publishTypes,
+    workerTypes
 }

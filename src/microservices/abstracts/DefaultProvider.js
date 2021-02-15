@@ -43,4 +43,7 @@ class DefaultProvider {
     }
 }
 
+/**
+ * @typedef { DefaultProvider } DefaultProvider
+ */
 module.exports = DefaultProvider

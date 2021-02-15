@@ -42,4 +42,7 @@ class BaseWorkerService {
     }
 }
 
+/**
+ * @typedef { BaseWorkerService } BaseWorkerService
+ */
 module.exports = BaseWorkerService

@@ -1,7 +1,26 @@
-const microservices = require("./src/microservices")
-const websockets = require("./src/websockets")
+const  { 
+    BaseWorkerService,
+    DefaultProvider,
+    ZeroMqProvider,
+    microServicesCore,
+    microServicesHandlerInstance,
+    publishTypes,
+    workerTypes
+} = require("./src/microservices")
+
+const { 
+    wsHandlerInstance,
+    wsConnectionsInstance
+} = require("./src/websockets")
 
 module.exports = {
-    ...microservices,
-    ...websockets
+    BaseWorkerService,
+    DefaultProvider,
+    ZeroMqProvider,
+    microServicesCore,
+    microServicesHandlerInstance,
+    publishTypes,
+    workerTypes,
+    wsHandlerInstance,
+    wsConnectionsInstance
 }

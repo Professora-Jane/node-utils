@@ -17,30 +17,36 @@ class ZeroMqProvider extends DefaultProvider {
         this.publisher = undefined
     }
 
+    /**
+     * 
+     * @param { object } config 
+     * @param { string } config.subHost 
+     * @param { string } config.pubHost 
+     */
     async configProvider(config) {
         this.config = config
-
         this.publisher = new zmq.Publisher()
-    
-        await this.publisher.bind(this.config.host)
+
+        await this.bindPublisher()
     }
 
-    async addWorker(worker, { workerType }) {
+    async bindPublisher() {
+        
+    
+        await this.publisher.bind(this.config.pubHost)
+    }
+
+    addWorker(worker, { workerType }) {
         this.workers.push({ worker, workerType})
     }
 
-    convertMessage(msg) {
-        return JSON.parse(new TextDecoder("utf-8").decode(msg));
-
-    }
-
     async configureWorkers() {
-        this.workers.map(async ({worker, workerType}) => {
+        this.workers.map(async ({ worker, workerType }) => {
             if (workerType === workerTypes.pubsub) {
 
                 worker.conn = new zmq.Subscriber()
 
-                worker.conn.connect(this.config.host)
+                worker.conn.connect(this.config.subHost)
         
                 worker.conn.subscribe(worker.topic)
     
@@ -62,7 +68,11 @@ class ZeroMqProvider extends DefaultProvider {
             content = JSON.stringify(content)
         
         await this.publisher.send([topic, content])
-    } 
+    }
+
+    convertMessage(msg) {
+        return JSON.parse(new TextDecoder("utf-8").decode(msg));
+    }
 }
 
 /**
