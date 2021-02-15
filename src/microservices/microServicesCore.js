@@ -43,7 +43,7 @@ class ProviderPool {
 
     
     initWorkerPool() {
-        return new WorkerPool(this);
+        return new WorkerPool(this.microservicesCore);
     }
 }
 
@@ -96,7 +96,7 @@ class WorkerPool {
             await this.microservicesCore.providers[provider].configureWorkers()
         })
 
-        return microServicesHandlerInstance.setMicroservicesCore(this)
+        return microServicesHandlerInstance.setMicroservicesCore(this.microservicesCore)
     }
 }
 
